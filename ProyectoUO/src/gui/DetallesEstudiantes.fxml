@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -15,7 +16,7 @@
          <children>
             <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@Imagenes/uv-icono.png" />
+                  <Image url="@uv-icono.png" />
                </image>
             </ImageView>
             <Label layoutX="285.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
@@ -23,10 +24,14 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ListView layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
-            <Button layoutX="50.0" layoutY="443.0" style="-fx-background-color: #A5D6A7;" text="Citas" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="280.0" />
-            <Button layoutX="590.0" layoutY="443.0" style="-fx-background-color: #A5D6A7;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="80.0" />
-            <JFXButton layoutX="470.0" layoutY="456.0" style="-fx-background-color: #A5D6A7;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="180.0" />
+            <ListView layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #BBDEFB;" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
+            <Button id="cancelarBtn" layoutX="530.0" layoutY="450.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #A5D6A7;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
+            <Button id="registrarBtn" layoutX="430.0" layoutY="450.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #A5D6A7;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="180.0" />
+            <Button layoutX="328.0" layoutY="450.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #A5D6A7;" text="Citas" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="280.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
          </children>
     </AnchorPane>
   </children>
