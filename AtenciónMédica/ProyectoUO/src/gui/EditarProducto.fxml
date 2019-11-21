@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?> 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditarProductoController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #9FA8DA;" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="135.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="23.0">
+               <image>
+                  <Image url="@imagenes/uv-icono.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="185.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="144.0" text="Nombre" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="110.0" />
+            <Label layoutX="135.0" layoutY="161.0" text="Presentación" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="135.0" />
+            <Label layoutX="135.0" layoutY="178.0" text="Existencias" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="160.0" />
+            <Button id="aceptarBtn" fx:id="aceptarBtn" layoutX="135.0" layoutY="195.0" style="-fx-background-color: #A5D6A7;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="340.0" />
+            <Button id="cancelarBtn" fx:id="cancelarBtn" layoutX="135.0" layoutY="220.0" 
+                    style="-fx-background-color: #A5D6A7;" text="Cancelar" 
+                    AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="340.0" 
+                    AnchorPane.rightAnchor="80.0" onAction="#detallesProducto" />
+            <TextField layoutX="135.0" layoutY="245.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
+            <TextField layoutX="135.0" layoutY="270.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
+            <TextField layoutX="135.0" layoutY="295.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

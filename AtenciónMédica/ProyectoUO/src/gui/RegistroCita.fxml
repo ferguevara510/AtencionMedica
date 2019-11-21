@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?> 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.RegistroCitaController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #9FA8DA;" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="336.0" AnchorPane.topAnchor="23.0">
+               <image>
+                  <Image url="@imagenes/uv-icono.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="175.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="104.0" text="Fecha" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="110.0" />
+            <Label layoutX="137.0" layoutY="121.0" text="Hora" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="135.0" />
+            <Button id="aceptarBtn" fx:id="aceptarBtn" layoutX="137.0" layoutY="138.0" style="-fx-background-color: #A5D6A7;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="290.0" />
+            <Button id="cancelarBtn" fx:id="cancelarBtn" layoutX="137.0" layoutY="163.0" 
+                    style="-fx-background-color: #A5D6A7;" text="Cancelar" 
+                    AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="290.0" 
+                    AnchorPane.rightAnchor="80.0" onAction="#detallesCita" />
+            <ComboBox layoutX="151.0" layoutY="106.0" promptText="Día" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="100.0" />
+            <ComboBox layoutX="212.0" layoutY="115.0" promptText="Mes" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="100.0" />
+            <ComboBox layoutX="280.0" layoutY="106.0" promptText="Año" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
+            <ComboBox layoutX="162.0" layoutY="140.0" promptText="Horas" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="125.0" />
+            <ComboBox layoutX="278.0" layoutY="140.0" promptText="Minutos" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
+            <Label layoutX="249.0" layoutY="135.0" text=":" textAlignment="CENTER" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="135.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
