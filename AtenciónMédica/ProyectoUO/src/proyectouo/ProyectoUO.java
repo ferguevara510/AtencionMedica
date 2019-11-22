@@ -9,16 +9,18 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
- * Clase que carga el sistema
+ * Clase que carga el sistema.
  * 
  * @author Karla Fernanda Guevara Flores
  * @version 1.0
  * @since 10-11-2019
  */
 public class ProyectoUO extends Application {
+  
   public static void main(String[] args) {
     launch(args);
   }
+  
   @Override
   public void start(Stage primaryStage) {
     try {
@@ -34,4 +36,5 @@ public class ProyectoUO extends Application {
       e.getMessage();
     }
   }
+  
 }
