@@ -1,7 +1,5 @@
 package logica;
 
-import logica.enums.EProgramaEducativo;
-
 /**
  * Clase Estudiante.
  *
@@ -15,7 +13,7 @@ public class Estudiante {
   private String apellidoPaterno;
   private String apellidoMaterno;
   private String matricula;
-  private EProgramaEducativo programaeducativo;
+  private String programaeducativo;
 
   /**
    * Constructor de la clase Estudiante.
@@ -26,8 +24,8 @@ public class Estudiante {
    * @param matricula atributo de la matricula del Estudiante
    * @param programaeducativo atributo del programa educativo del Estudiante
    */
-  public Estudiante(String nombre, String apellidoPaterno, String apellidoMaterno, String matricula, 
-          EProgramaEducativo programaeducativo) {
+  public Estudiante(String nombre, String apellidoPaterno, String apellidoMaterno, 
+          String matricula, String programaeducativo) {
     this.nombre = nombre;
     this.apellidoPaterno = apellidoPaterno;
     this.apellidoMaterno = apellidoMaterno;
@@ -67,12 +65,17 @@ public class Estudiante {
     this.matricula = matricula;
   }
 
-  public EProgramaEducativo getProgramaeducativo() {
+  public String getProgramaeducativo() {
     return programaeducativo;
   }
 
-  public void setProgramaeducativo(EProgramaEducativo programaeducativo) {
+  public void setProgramaeducativo(String programaeducativo) {
     this.programaeducativo = programaeducativo;
+  }
+  
+  @Override
+  public String toString(){
+    return "";
   }
   
 }

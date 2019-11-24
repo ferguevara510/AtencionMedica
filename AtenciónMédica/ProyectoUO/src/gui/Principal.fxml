@@ -8,44 +8,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" 
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrincipalController">
+<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PrincipalController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="285.0" prefWidth="551.0" 
-                style="-fx-background-color: #9FA8DA;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="285.0" prefWidth="551.0" style="-fx-background-color: #9FA8DA;" VBox.vgrow="ALWAYS">
          <children>
-            <Button id="estudiantesBtn" fx:id="estudiantesBtn" layoutX="207.0" 
-                    layoutY="251.0" mnemonicParsing="false" style="-fx-background-color: #A5D6A7;" 
-                    text="Estudiantes" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="95.0" 
-                    AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="250.0" 
-                    onAction="#detallesEstudiantes" />
-            <ImageView fitHeight="105.0" fitWidth="155.0" layoutX="115.0" layoutY="125.0" 
-                       pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="95.0" 
-                       AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="125.0">
+            <Button id="estudiantesBtn" fx:id="estudiantesBtn" blendMode="COLOR_BURN" cache="true" cacheHint="SCALE_AND_ROTATE" layoutX="207.0" layoutY="251.0" mnemonicParsing="false" onAction="#detallesEstudiantes" style="-fx-background-color: #A5D6A7; -fx-background-radius: 50;" text="Estudiantes" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="250.0" />
+            <ImageView fitHeight="105.0" fitWidth="155.0" layoutX="115.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="125.0">
                <image>
                   <Image url="@imagenes/estudiante-icono.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="22.0" layoutY="23.0" 
-                       pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="208.0" 
-                       AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="386.0" 
-                       AnchorPane.topAnchor="23.0">
+            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="23.0">
                <image>
                   <Image url="@imagenes/uv-icono.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="155.0" layoutX="315.0" layoutY="125.0" 
-                       pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="95.0" 
-                       AnchorPane.topAnchor="125.0">
+            <ImageView fitHeight="105.0" fitWidth="155.0" layoutX="315.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="125.0">
                <image>
                   <Image url="@imagenes/productos-icono.png" />
                </image>
             </ImageView>
-            <Button id="productosBtn" fx:id="productosBtn" layoutX="327.0" layoutY="250.0" 
-                    mnemonicParsing="false" style="-fx-background-color: #A5D6A7;" text="Productos" 
-                    AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="300.0" 
-                    AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="250.0" 
-                    onAction="#detallesProductos" />
+            <Button id="productosBtn" fx:id="productosBtn" blendMode="COLOR_BURN" cache="true" cacheHint="SCALE_AND_ROTATE" layoutX="327.0" layoutY="250.0" mnemonicParsing="false" onAction="#detallesProductos" style="-fx-background-color: #A5D6A7; -fx-background-radius: 50;" text="Productos" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="250.0" />
             <Label layoutX="185.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
                <font>
                   <Font size="15.0" />

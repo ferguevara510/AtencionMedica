@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #9FA8DA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DetallesProductosController">
+<VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #9FA8DA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DetallesProductosController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@Imagenes/uv-icono.png" />
+                  <Image url="@imagenes/uv-icono.png" />
                </image>
             </ImageView>
             <Label layoutX="285.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
@@ -23,10 +23,10 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ListView layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
-            <JFXButton layoutX="50.0" layoutY="443.0" style="-fx-background-color: #A5D6A7;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="280.0" />
-            <JFXButton layoutX="590.0" layoutY="443.0" style="-fx-background-color: #A5D6A7;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="80.0" />
-            <JFXButton layoutX="470.0" layoutY="456.0" style="-fx-background-color: #A5D6A7;" text="Editar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="180.0" />
+            <ListView id="listaProductos" fx:id="listaProductos" blendMode="COLOR_BURN" layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
+            <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="530.0" layoutY="450.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
+            <Button id="registrarBtn" fx:id="registrarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="430.0" layoutY="450.0" mnemonicParsing="false" onAction="#registrarProductos" prefHeight="25.0" prefWidth="90.0" style="-fx-background-radius: 50;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="180.0" />
+            <Button id="editarBtn" fx:id="editarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="328.0" layoutY="450.0" mnemonicParsing="false" onAction="#editarProductos" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Editar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="280.0" />
          </children>
     </AnchorPane>
   </children>

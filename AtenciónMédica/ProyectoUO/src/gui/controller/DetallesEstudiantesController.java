@@ -32,7 +32,7 @@ public class DetallesEstudiantesController {
   @FXML  
   public void principal(ActionEvent event) throws IOException {
     ((Node) (event.getSource())).getScene().getWindow().hide();
-    Parent parent = FXMLLoader.load(getClass().getResource(("Principal.fxml")));
+    Parent parent = FXMLLoader.load(getClass().getResource(("/gui/Principal.fxml")));
     Stage stage = new Stage();
     Scene scene = new Scene(parent);
     stage.setTitle("Principal");

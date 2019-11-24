@@ -1,7 +1,6 @@
 package logica;
 
 import logica.enums.EHora;
-import logica.enums.EMinutos;
 
 /**
  * Clase Cita.
@@ -14,7 +13,6 @@ public class Cita {
   
   private String fecha;
   private EHora hora;
-  private EMinutos minutos;
   private Estudiante estudiante;
 
   /**
@@ -25,10 +23,9 @@ public class Cita {
    * @param minutos atributo de los minutos de la Cita
    * @param estudiante atributo del Estudiante de la Cita
    */
-  public Cita(String fecha, EHora hora, EMinutos minutos, Estudiante estudiante) {
+  public Cita(String fecha, EHora hora, Estudiante estudiante) {
     this.fecha = fecha;
     this.hora = hora;
-    this.minutos = minutos;
     this.estudiante = estudiante;
   }
 
@@ -46,14 +43,6 @@ public class Cita {
 
   public void setHora(EHora hora) {
     this.hora = hora;
-  }
-
-  public EMinutos getMinutos() {
-    return minutos;
-  }
-
-  public void setMinutos(EMinutos minutos) {
-    this.minutos = minutos;
   }
 
   public Estudiante getEstudiante() {

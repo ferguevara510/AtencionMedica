@@ -9,17 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #9FA8DA;" 
-      xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="gui.controller.DetallesEstudiantesController">
+<VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #9FA8DA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DetallesEstudiantesController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" 
-                VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" 
-                       pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" 
-                       AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" 
-                       AnchorPane.topAnchor="23.0">
+            <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" AnchorPane.topAnchor="23.0">
                <image>
                   <Image url="@imagenes/uv-icono.png" />
                </image>
@@ -29,25 +23,10 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ListView layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" 
-                      AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" 
-                      AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" 
-                      style="-fx-background-color: #BBDEFB;" />
-            <Button id="cancelarBtn" fx:id="cancelarBtn" layoutX="530.0" layoutY="450.0" 
-                    mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" 
-                    style="-fx-background-color: #A5D6A7;" text="Cancelar" 
-                    AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" 
-                    onAction="#principal" />
-            <Button id="registrarBtn" fx:id="registrarBtn" layoutX="430.0" layoutY="450.0" 
-                    mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" 
-                    style="-fx-background-color: #A5D6A7;" text="Registrar" 
-                    AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="180.0" 
-                    onAction="#registrarEstudiantes" />
-            <Button id="citasBtn" fx:id="citasBtn" layoutX="328.0" layoutY="450.0" 
-                    mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" 
-                    style="-fx-background-color: #A5D6A7;" text="Citas" 
-                    AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="280.0" 
-                    onAction="#detallesCitas" />
+            <ListView id="listaEstudiantes" fx:id="listaEstudiantes" blendMode="COLOR_BURN" layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
+            <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" layoutX="530.0" layoutY="450.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
+            <Button id="registrarBtn" fx:id="registrarBtn" blendMode="COLOR_BURN" layoutX="430.0" layoutY="450.0" mnemonicParsing="false" onAction="#registrarEstudiantes" prefHeight="25.0" prefWidth="90.0" style="-fx-background-radius: 50;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="180.0" />
+            <Button id="citasBtn" fx:id="citasBtn" blendMode="COLOR_BURN" layoutX="328.0" layoutY="450.0" mnemonicParsing="false" onAction="#detallesCitas" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Citas" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="280.0" />
          </children>
     </AnchorPane>
   </children>
