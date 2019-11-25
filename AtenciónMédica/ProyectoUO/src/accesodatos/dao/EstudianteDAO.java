@@ -55,37 +55,4 @@ public class EstudianteDAO {
     }
   }
   
-  /**
-   * Método que ayuda a la interfaz gráfica ha editar un Estduiante que ya se había registrado 
-   * previamente en la base de datos del sistema.
-   * 
-   * @param estudiante el objeto Estudiante que se va editar en la base de datos del sistema
-   * @throws SQLException exceptión de la base de datos SQL
-   */
-  public void editarEstudiante (Estudiante estudiante) throws SQLException {
-    Connection conexion = null;
-    PreparedStatement st = null;
-    try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
-      st = conexion.prepareStatement("UPDATE estudiante set nombre =?, apellidoPaterno =?, "
-              + "apellidoMaterno =?, matricula =?, programaEducativo =?");
-      st.setString(1, estudiante.getNombre());
-      st.setString(2, estudiante.getApellidoPaterno());
-      st.setString(3, estudiante.getApellidoMaterno());
-      st.setString(4, estudiante.getMatricula());
-      st.setString(5, estudiante.getProgramaeducativo());
-      st.executeUpdate();
-      st.close();
-    } catch (SQLException ex) {
-      System.out.println("Error al ingresar a la base de datos");
-    } finally {
-      if (st != null) {
-        try {
-          st.close();
-        } catch (SQLException e) {
-          Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, e);
-        }
-      }
-    }
-  }
 }

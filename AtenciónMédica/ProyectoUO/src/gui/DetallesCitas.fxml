@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@imagenes/uv-icono.png" />
+                  <Image url="@../../../../../prototipos/Pantallas/imagenes/uv-icono.png" />
                </image>
             </ImageView>
             <Label layoutX="285.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
@@ -26,7 +26,6 @@
             <ListView id="listaCitas" fx:id="listaCitas" blendMode="COLOR_BURN" layoutX="68.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="530.0" layoutY="450.0" mnemonicParsing="false" onAction="#detallesEstudiante" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
             <Button id="registrarBtn" fx:id="registrarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="430.0" layoutY="450.0" mnemonicParsing="false" onAction="#registrarCitas" prefHeight="25.0" prefWidth="90.0" style="-fx-background-radius: 50;" text="Registrar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="180.0" />
-            <Button id="editarBtn" fx:id="editarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="328.0" layoutY="450.0" mnemonicParsing="false" onAction="#editarCitas" prefHeight="25.0" prefWidth="92.0" style="-fx-background-radius: 50;" text="Editar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="280.0" />
          </children>
     </AnchorPane>
   </children>

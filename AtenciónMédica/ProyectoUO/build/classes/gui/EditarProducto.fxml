@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="250.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditarProductoController">
+<VBox prefHeight="291.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EditarProductoController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #9FA8DA;" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="135.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@imagenes/uv-icono.png" />
+                  <Image url="@../../../../../prototipos/Pantallas/imagenes/uv-icono.png" />
                </image>
             </ImageView>
             <Label layoutX="185.0" layoutY="47.0" text="ATENCIÓN MÉDICA">
@@ -23,14 +23,17 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="135.0" layoutY="144.0" text="Nombre" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="110.0" />
-            <Label layoutX="135.0" layoutY="161.0" text="Presentación" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="135.0" />
-            <Label layoutX="135.0" layoutY="178.0" text="Existencias" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="160.0" />
+            <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="144.0" text="Nombre" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="110.0" />
+            <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="161.0" text="Presentación" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="135.0" />
+            <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="178.0" text="Existencias" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="160.0" />
             <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" layoutX="135.0" layoutY="195.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" layoutX="135.0" layoutY="220.0" onAction="#detallesProducto" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
-            <TextField id="nombre" fx:id="nombre" blendMode="COLOR_BURN" layoutX="135.0" layoutY="245.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
-            <TextField id="presentacion" fx:id="presentacion" blendMode="COLOR_BURN" layoutX="135.0" layoutY="270.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
-            <TextField id="exitencias" fx:id="existencias" blendMode="COLOR_BURN" layoutX="135.0" layoutY="295.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
+            <TextField id="nombreTF" fx:id="nombreTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="245.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
+            <TextField id="presentacionTF" fx:id="presentacionTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="270.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
+            <TextField id="exitenciasTF" fx:id="existenciasTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="295.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
+            <Label blendMode="COLOR_BURN" layoutX="80.0" layoutY="195.0" text="Nombre Producto" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="195.0" />
+            <TextField blendMode="COLOR_BURN" layoutX="200.0" layoutY="188.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="190.0" />
+            <Button id="buscarBtn" fx:id="BuscarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="388.0" layoutY="190.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="Buscar" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="190.0" />
          </children>
     </AnchorPane>
   </children>

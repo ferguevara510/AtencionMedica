@@ -48,7 +48,6 @@ public class RegistroCitaController implements Initializable{
             " 13:00 horas ", " 13:00 horas ", " 13:30 horas ", " 14:00 horas ", " 14:30 horas ", 
             " 15:00 horas ", " 15:30 horas ", " 16:00 horas ", " 16:30 horas ", " 17:00 horas ", 
             " 17:30 horas ", " 18:00 horas", " 18:30 horas ", " 19:00 horas ", " 19:30 horas "));
-    estudiantesCB.getItems().clear();
   }
   
   void registroProducto (ActionEvent event) throws IOException {

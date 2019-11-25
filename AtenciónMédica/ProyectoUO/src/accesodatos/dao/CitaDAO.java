@@ -53,34 +53,4 @@ public class CitaDAO {
     }
   }
   
-  /**
-   * Método que ayuda a la interfaz gráfica ha editar una Cita que ya se había registrado 
-   * previamente en la base de datos del sistema.
-   * 
-   * @param cita el objeto Estudiante que se va editar en la base de datos del sistema
-   * @throws SQLException exceptión de la base de datos SQL
-   */
-  public void editarCita (Cita cita)  throws SQLException {
-    Connection conexion = null;
-    PreparedStatement st = null;
-    try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
-      st = conexion.prepareStatement("UPDATE cita set fecha =?, hora =?, estudiante =?");
-      st.setString(1, cita.getFecha());
-      st.setString(2, cita.getHora());
-      st.setString(3, cita.getEstudiante().toString());
-      st.executeUpdate();
-      st.close();
-    } catch (SQLException ex) {
-      System.out.println("Error al ingresar a la base de datos");
-    } finally {
-      if (st != null) {
-        try {
-          st.close();
-        } catch (SQLException e) {
-          Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, e);
-        }
-      }
-    }
-  }
 }

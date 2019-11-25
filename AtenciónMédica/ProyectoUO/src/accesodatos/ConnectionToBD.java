@@ -4,7 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Clase para crear la conexión con la base de datos del sistema.
+ * 
+ * @author Karla Fernanda Guevara Flores
+ * @version 1.0
+ * @since 20-11-2019
+ */
 public class ConnectionToBD {
+  
   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
   static final String DB_URL = "jdbc:mysql://";
   private Connection conexion;
@@ -16,8 +24,8 @@ public class ConnectionToBD {
    * @param pass contraseña del usuario.
    * @param bd nombre de la base de datos
    * @param host el host al que se quiere accesar
-   * @return
-   * @throws SQLException 
+   * @return genera un retorno de valores
+   * @throws SQLException conexión con la base de datos de MySql
    */
   public static Connection conectar(String usuario, String pass, String bd, String host) 
           throws SQLException {
@@ -36,6 +44,11 @@ public class ConnectionToBD {
     return res;
   }
   
+  /**
+   * Metodo que abre la conexión con la base de datos de MySql.
+   * 
+   * @throws SQLException conexión con la base de datosde MySql
+   */
   public ConnectionToBD() throws SQLException {
     String iP = "localhost";
     String usuario = "root";
@@ -54,10 +67,12 @@ public class ConnectionToBD {
       throw new SQLException("Error al conectase a la base de datos");
     }
   }
+  
   /**
    * Genera la conexion a la BDD.
-   * @return 
-   * @throws java.sql.SQLException
+   * 
+   * @return genera un retorno de valores
+   * @throws java.sql.SQLException conexión con la base de datos de MySql
    */
   public Connection getConexion() throws SQLException {
     return this.conexion;
@@ -65,8 +80,9 @@ public class ConnectionToBD {
 
   /**
    * Cierra la conexion a la BDD.
-   * @return 
-   * @throws java.sql.SQLException
+   * 
+   * @return genera un retorno de valores
+   * @throws java.sql.SQLException conexión con la base de datos de MySql
    */
   public boolean cerrarConexion() throws SQLException {
     try {

@@ -17,6 +17,11 @@ import javafx.stage.StageStyle;
  */
 public class ProyectoUO extends Application {
   
+  /**
+   * Método que inicializa el programa.
+   * 
+   * @param args 
+   */
   public static void main(String[] args) {
     launch(args);
   }
