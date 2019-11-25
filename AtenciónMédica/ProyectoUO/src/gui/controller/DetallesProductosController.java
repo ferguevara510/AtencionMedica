@@ -1,6 +1,5 @@
 package gui.controller;
 
-import gui.controller.DetallesEstudiantesController;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -22,13 +22,13 @@ import javafx.stage.StageStyle;
 public class DetallesProductosController {
   
   @FXML
-  private Button cancelar;
-  
+  private ListView<?> listaProductos;
   @FXML
-  private Button registrar;
-  
+  private Button cancelarBtn;
   @FXML
-  private Button editar;
+  private Button registrarBtn;
+  @FXML
+  private Button editarBtn;
   
   @FXML
   void principal(ActionEvent event) throws IOException {

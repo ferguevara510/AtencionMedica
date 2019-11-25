@@ -31,11 +31,11 @@
             <Label blendMode="COLOR_BURN" layoutX="86.0" layoutY="206.0" text="Programa Educativo" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="210.0" />
             <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="314.0" layoutY="98.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="417.0" layoutY="250.0" onAction="#detallesEstudiante" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
-            <TextField id="nombre" fx:id="nombre" blendMode="COLOR_BURN" layoutX="251.0" layoutY="106.0" promptText="Jesús" style="-fx-background-color: 9fa8da;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
-            <TextField id="apellidoPaterno" fx:id="apellidoPaterno" blendMode="COLOR_BURN" layoutX="249.0" layoutY="131.0" promptText="Pérez" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
-            <TextField id="apellidoMaterno" fx:id="apellidoMaterno" blendMode="COLOR_BURN" layoutX="249.0" layoutY="165.0" promptText="Pérez" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
-            <TextField id="matricula" fx:id="matricula" blendMode="COLOR_BURN" layoutX="285.0" layoutY="198.0" promptText="S15011604" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="175.0" />
-            <ComboBox id="programaEducativo" fx:id="programaEducativo" blendMode="COLOR_BURN" layoutX="251.0" layoutY="206.0" promptText="Selecciona Programa Educativo" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="200.0" />
+            <TextField id="nombreTF" fx:id="nombreTF" blendMode="COLOR_BURN" layoutX="251.0" layoutY="106.0" promptText="Jesús" style="-fx-background-color: 9fa8da;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
+            <TextField id="apellidoPaternoTF" fx:id="apellidoPaternoTF" blendMode="COLOR_BURN" layoutX="249.0" layoutY="131.0" promptText="Pérez" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
+            <TextField id="apellidoMaternoTF" fx:id="apellidoMaternoTF" blendMode="COLOR_BURN" layoutX="249.0" layoutY="165.0" promptText="Pérez" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
+            <TextField id="matriculaTF" fx:id="matriculaTF" blendMode="COLOR_BURN" layoutX="285.0" layoutY="198.0" promptText="S15011604" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="175.0" />
+            <ComboBox id="programaEducativoCB" fx:id="programaEducativoCB" blendMode="COLOR_BURN" layoutX="251.0" layoutY="206.0" promptText="Selecciona Programa Educativo" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="200.0" />
       </children>
     </AnchorPane>
   </children>

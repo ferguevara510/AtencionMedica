@@ -12,19 +12,20 @@ import junit.framework.TestCase;
  *
  * @author JENNY
  */
-public class ConexionTest extends TestCase {
+public class ConnectionToBDTest extends TestCase {
   
-  public ConexionTest(String testName) {
+  public ConnectionToBDTest(String testName) {
     super(testName);
   }
   
 
   /**
    * Test of getConexion method, of class Conexion.
+   * @throws java.lang.Exception
    */
   public void testConexion() throws Exception {
     System.out.println("getConexion");
-    Conexion instance = new Conexion();
+    ConnectionToBD instance = new ConnectionToBD();
     boolean expResult = true;
     Connection result = null;
     result = instance.getConexion();
@@ -34,7 +35,7 @@ public class ConexionTest extends TestCase {
   }
   public void testCerrarConexion() throws Exception {
     System.out.println("cerrarConexion");
-    Conexion instance = new Conexion();
+    ConnectionToBD instance = new ConnectionToBD();
     boolean expResult = true;
     boolean result = false;
     result = instance.cerrarConexion();

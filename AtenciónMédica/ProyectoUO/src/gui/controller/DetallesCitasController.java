@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,13 +22,13 @@ import javafx.stage.StageStyle;
 public class DetallesCitasController {
   
   @FXML
-  private Button cancelar;
-  
+  private ListView<?> listaCitas;
   @FXML
-  private Button registrar;
-  
+  private Button cancelarBtn;
   @FXML
-  private Button editar;
+  private Button registrarBtn;
+  @FXML
+  private Button editarBtn;
   
   /**
    * 
@@ -61,4 +62,5 @@ public class DetallesCitasController {
     stage.setScene(scene);
     stage.show();
   }
+  
 }

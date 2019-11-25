@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,14 +22,22 @@ import javafx.stage.StageStyle;
 public class DetallesEstudiantesController {
   
   @FXML
-  private Button cancelar;
+  private ListView<?> listaEstudiantes;
+  @FXML
+  private Button cancelarBtn;
   
   @FXML
-  private Button registrar;
-  
+  private Button registrarBtn;
   @FXML
-  private Button citas;
+  private Button citasBtn;
   
+  /**
+   * Método que abre la pantalla Principal, donde se visualiza las dos opciones para administrar en
+   * el sistema.
+   * 
+   * @param event
+   * @throws IOException 
+   */
   @FXML  
   public void principal(ActionEvent event) throws IOException {
     ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -53,6 +62,13 @@ public class DetallesEstudiantesController {
     stage.show();
   }
   
+  /**
+   * Método que abre la pantalla DetallesCitas, donde se visualiza los datos de las Citas de los
+   * Estudiantres registrados en el sistema.
+   * 
+   * @param event
+   * @throws IOException 
+   */
   @FXML
   public void detallesCitas(ActionEvent event) throws IOException {
     ((Node) (event.getSource())).getScene().getWindow().hide();

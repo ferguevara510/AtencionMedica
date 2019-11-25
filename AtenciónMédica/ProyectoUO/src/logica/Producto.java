@@ -20,7 +20,7 @@ public class Producto {
    * @param presentacion atributo del tipo presentación del Producto
    * @param existencias atributo de las existencias del Producto
    */
-  public Producto(String nombre, String presentacion, int existencias) {
+   public Producto(int existencias, String nombre, String presentacion) {
     this.nombre       = nombre;
     this.presentacion = presentacion;
     this.existencias  = existencias;
@@ -50,4 +50,5 @@ public class Producto {
     this.presentacion = presentacion;
   }
   
+    
 }

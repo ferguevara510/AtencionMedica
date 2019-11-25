@@ -3,13 +3,9 @@ package gui.controller;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 
 /**
  * Clase que controla la pantalla EditarCita, donde se edita los datos de una Cita en el sistema.
@@ -22,9 +18,14 @@ public class EditarCitaController {
   
   @FXML
   private Button aceptarBtn;
-  
   @FXML
   private Button cancelarBtn;
+  @FXML
+  private ComboBox<?> horas;
+  @FXML
+  private DatePicker fecha;
+  @FXML
+  private ComboBox<?> estudiantes;
   
   @FXML
   void detallesCita (ActionEvent event) throws IOException {

@@ -23,13 +23,15 @@ public class PrincipalController {
 
   @FXML
   private Button estudiantesBtn;
-  
   @FXML
   private Button productosBtn;
   
   /**
-   * Abre la pantalla DetallesEstudiantes, donde se visualiza los datos de los Estudiantres 
-   * registrados en el sistema. 
+   * Método que abre la pantalla DetallesEstudiantes, donde se visualiza los datos de los 
+   * Estudiantres registrados en el sistema. 
+   *
+   * @param event
+   * @throws IOException 
    */
   @FXML
   public void detallesEstudiantes(ActionEvent event) throws IOException {
@@ -45,6 +47,9 @@ public class PrincipalController {
   /**
    * Abre la pantalla DetallesProductos, donde se visualiza los datos de los Productos 
    * registrados en el sistema. 
+   *
+   * @param event
+   * @throws IOException 
    */
   @FXML
   public void detallesProductos(ActionEvent event) throws IOException {
