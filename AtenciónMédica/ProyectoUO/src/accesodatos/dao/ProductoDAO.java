@@ -18,11 +18,6 @@ import logica.Producto;
  */
 public class ProductoDAO {
   
-  String usuario = "root";
-  String contrasena = "Karlita510";
-  String bd = "atencionMedica";
-  String host = "localhost";
-  
   /**
    * Método que ayuda a la interfaz gráfica ha agregar un Producto a la base de datos del sistema.
    * 
@@ -30,14 +25,14 @@ public class ProductoDAO {
    * @throws SQLException excepción de la base de datos SQL
    */
   public void registrarProducto (Producto producto) throws SQLException {
-    Connection conexion = null;
     PreparedStatement st = null;
     try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
-      st = conexion.prepareStatement("INSERT INTO PRODUCTO VALUES(?, ?, ?)");
-      st.setString(1, producto.getNombre());
-      st.setString(2, producto.getPresentacion());
-      st.setInt(3, producto.getExistencias());
+      Connection conexion = new ConnectionToBD().getConexion();
+      st = conexion.prepareStatement("INSERT INTO PRODUCTO VALUES(?, ?, ?, ?)");
+      st.setString(1, null);
+      st.setString(2, producto.getNombre());
+      st.setString(3, producto.getPresentacion());
+      st.setInt(4, producto.getExistencias());
       st.executeUpdate();
       st.close();
     } catch (SQLException ex) {
@@ -61,10 +56,9 @@ public class ProductoDAO {
    * @throws SQLException exceptión de la base de datos SQL
    */
   public void editarProducto (Producto producto) throws SQLException {
-    Connection conexion = null;
     PreparedStatement st = null;
     try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
+      Connection conexion = new ConnectionToBD().getConexion();
       st = conexion.prepareStatement("UPDATE producto  set nombre =?, presentacion =?, "
               + "existencias =?");
       st.setString(1, producto.getNombre());

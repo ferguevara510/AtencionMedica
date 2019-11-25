@@ -24,6 +24,7 @@ import logica.Estudiante;
  */
 public class RegistroEstudianteController implements Initializable {
   
+  @FXML
   private ComboBox<String> programaEducativoCB;
   @FXML
   private Button aceptarBtn;
@@ -37,8 +38,6 @@ public class RegistroEstudianteController implements Initializable {
   private TextField apellidoMaternoTF;
   @FXML
   private TextField matriculaTF;
-  
-  
   
   @FXML
   void detallesEstudiante (ActionEvent event) throws IOException{
@@ -71,8 +70,8 @@ public class RegistroEstudianteController implements Initializable {
         } catch (SQLException e) {
           AlertaController.mensajeAdvertencia("Error base de datos");
         }
-        DetallesEstudiantesController detalles = new DetallesEstudiantesController();
-        detalles.principal(event);
+        PrincipalController detalles = new PrincipalController();
+        detalles.detallesEstudiantes(event);
       } catch (RuntimeException e) {
         AlertaController.mensajeInformacion("Error de llenado");
       }

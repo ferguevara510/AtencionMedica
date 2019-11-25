@@ -29,7 +29,7 @@
             <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="152.0" layoutY="183.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" onAction="#registroProducto"  />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="152.0" layoutY="208.0" onAction="#detallesProducto" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
             <TextField id="nombreTF" fx:id="nombreTF" blendMode="COLOR_BURN" layoutX="152.0" layoutY="233.0" promptText="Paracetamol " AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
-            <TextField id="presentacionTF" fx:id="presentaciónTF" blendMode="COLOR_BURN" layoutX="152.0" layoutY="258.0" promptText="Solución" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
+            <TextField id="presentacionTF" fx:id="presentacionTF" blendMode="COLOR_BURN" layoutX="152.0" layoutY="258.0" promptText="Solución" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
             <TextField id="existenciasTF" fx:id="existenciasTF" blendMode="COLOR_BURN" layoutX="152.0" layoutY="283.0" promptText="5" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
          </children>
     </AnchorPane>

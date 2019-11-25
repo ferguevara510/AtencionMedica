@@ -42,8 +42,7 @@ public class DetallesProductosController {
     Parent parent = FXMLLoader.load(getClass().getResource(("/gui/RegistroProducto.fxml")));
     Stage stage = new Stage();
     Scene scene = new Scene(parent);
-    stage.initStyle(StageStyle.UNIFIED);
-    // stage.initStyle(StageStyle.TRANSPARENT);
+    stage.initStyle(StageStyle.TRANSPARENT);
     stage.setScene(scene);
     stage.show();
   }
@@ -54,8 +53,7 @@ public class DetallesProductosController {
     Parent parent = FXMLLoader.load(getClass().getResource(("/gui/EditarProducto.fxml")));
     Stage stage = new Stage();
     Scene scene = new Scene(parent);
-    stage.initStyle(StageStyle.UNIFIED);
-    // stage.initStyle(StageStyle.TRANSPARENT);
+    stage.initStyle(StageStyle.TRANSPARENT);
     stage.setScene(scene);
     stage.show();
   }

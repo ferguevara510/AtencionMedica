@@ -26,14 +26,14 @@
             <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="144.0" text="Nombre" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="110.0" />
             <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="161.0" text="Presentación" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="135.0" />
             <Label blendMode="COLOR_BURN" layoutX="135.0" layoutY="178.0" text="Existencias" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="160.0" />
-            <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" layoutX="135.0" layoutY="195.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" />
+            <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" layoutX="135.0" layoutY="195.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" onAction="#editarProducto" />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" layoutX="135.0" layoutY="220.0" onAction="#detallesProducto" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
             <TextField id="nombreTF" fx:id="nombreTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="245.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
             <TextField id="presentacionTF" fx:id="presentacionTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="270.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="125.0" />
             <TextField id="exitenciasTF" fx:id="existenciasTF" blendMode="COLOR_BURN" layoutX="135.0" layoutY="295.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="150.0" />
             <Label blendMode="COLOR_BURN" layoutX="80.0" layoutY="195.0" text="Nombre Producto" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="195.0" />
-            <TextField blendMode="COLOR_BURN" layoutX="200.0" layoutY="188.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="190.0" />
-            <Button id="buscarBtn" fx:id="BuscarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="388.0" layoutY="190.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="Buscar" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="190.0" />
+            <TextField id="buscadorTF" fx:id="buscadorTF" blendMode="COLOR_BURN" layoutX="200.0" layoutY="188.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="190.0" />
+            <Button id="buscarBtn" fx:id="BuscarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="388.0" layoutY="190.0" mnemonicParsing="false" style="-fx-background-radius: 50;" text="Buscar" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="190.0" onAction="#buscarProducto" />
          </children>
     </AnchorPane>
   </children>

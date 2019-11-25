@@ -18,11 +18,6 @@ import logica.Estudiante;
  */
 public class EstudianteDAO {
   
-  String usuario = "root";
-  String contrasena = "Karlita510";
-  String bd = "atencionMedica";
-  String host = "localhost";
-  
   /**
    * Método que ayuda a la interfaz gráfica ha agregar un Estudiante a la base de datos del sistema.
    * 
@@ -30,11 +25,10 @@ public class EstudianteDAO {
    * @throws SQLException excepción de la base de datos SQL
    */
   public void registrarEstudiante (Estudiante estudiante) throws SQLException {
-    Connection conexion = null;
     PreparedStatement st = null;
     try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
-      st = conexion.prepareStatement("INSERT INTO ESTUDIANTE VALUES(?, ?, ?, ?, ?)");
+      Connection conexion = new ConnectionToBD().getConexion();
+      st = conexion.prepareStatement("insert into estudiante values (?, ?, ?, ?, ?)");
       st.setString(1, estudiante.getNombre());
       st.setString(2, estudiante.getApellidoPaterno());
       st.setString(3, estudiante.getApellidoMaterno());

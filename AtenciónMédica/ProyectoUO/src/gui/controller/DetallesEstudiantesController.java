@@ -1,6 +1,13 @@
 package gui.controller;
 
+import accesodatos.ConnectionToBD;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,10 +29,9 @@ import javafx.stage.StageStyle;
 public class DetallesEstudiantesController {
   
   @FXML
-  private ListView<?> listaEstudiantes;
+  private ListView<String> listaEstudiantes;
   @FXML
   private Button cancelarBtn;
-  
   @FXML
   private Button registrarBtn;
   @FXML
@@ -78,6 +84,31 @@ public class DetallesEstudiantesController {
     stage.initStyle(StageStyle.TRANSPARENT);
     stage.setScene(scene);
     stage.show();
+  }
+  
+  @FXML
+  void buscarEstudiante(ActionEvent event) throws SQLException {
+    listaEstudiantes.getItems().clear();
+    try {
+      Connection conexion = ConnectionToBD.conectar ("root", "Karlita510", "atencionmedica", 
+              "localhost");
+      PreparedStatement ps = (PreparedStatement) conexion.prepareStatement
+        ("select * from estudiante");
+      ResultSet rs = ps.executeQuery(); {
+      while (rs.next()) {
+        String estudiante = rs.getString(" nombre ") + " nombre | " 
+                + rs.getString(" apellidoPaterno ") + " apellidoPaterno | "
+                + rs.getString(" apellidoMaterno ") + " apellidoMaterno | "
+                + rs.getString(" matricula ") + " matricula | "
+                + rs.getString(" programaEducativo ") + " programaEducativo | ";
+        ObservableList<String> list = FXCollections.observableArrayList(estudiante);
+        list.add(estudiante);
+        listaEstudiantes.getItems().addAll(list);
+      }
+    }
+    } catch (Exception e) {
+      System.out.println("error");
+    }
   }
   
 }

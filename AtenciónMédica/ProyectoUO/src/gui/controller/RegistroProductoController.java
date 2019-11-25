@@ -5,14 +5,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import logica.Producto;
 
 /**
@@ -33,9 +27,9 @@ public class RegistroProductoController {
   @FXML
   private TextField nombreTF;
   @FXML
-  private TextField presentaciónTF;
-  @FXML
   private TextField existenciasTF;
+  @FXML
+  private TextField presentacionTF;
 
   @FXML
   void detallesProducto (ActionEvent event) throws IOException {
@@ -44,11 +38,11 @@ public class RegistroProductoController {
   }
   
   @FXML
-  public void registroProducto (ActionEvent event) throws IOException {
+  void registroProducto (ActionEvent event) throws IOException {
     if (validarDatos() == true) {
       try {
         String nombre = nombreTF.getText();
-        String presentacion = presentaciónTF.getText();
+        String presentacion = presentacionTF.getText();
         int existencias = Integer.parseInt(existenciasTF.getText());
         Producto producto = new Producto(existencias, nombre, presentacion);
         ProductoDAO productodao = new ProductoDAO();
@@ -71,7 +65,7 @@ public class RegistroProductoController {
     if (nombreTF.getText().isEmpty()) {
       return false;
     }
-    if (presentaciónTF.getText().isEmpty()) {
+    if (presentacionTF.getText().isEmpty()) {
       return false;
     }
     if (existenciasTF.getText().isEmpty()) {

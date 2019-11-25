@@ -18,11 +18,6 @@ import logica.Cita;
  */
 public class CitaDAO {
   
-  String usuario = "root";
-  String contrasena = "Karlita510";
-  String bd = "atencionMedica";
-  String host = "localhost";
-  
   /**
    * Método que ayuda a la interfaz gráfica ha agregar una Cita a la base de datos del sistema.
    * 
@@ -30,10 +25,9 @@ public class CitaDAO {
    * @throws SQLException excepción de la base de datos SQL
    */
   public void registrarCita (Cita cita) throws SQLException {
-    Connection conexion = null;
     PreparedStatement st = null;
     try {
-      conexion = ConnectionToBD.conectar(usuario, contrasena, bd, host);
+      Connection conexion = new ConnectionToBD().getConexion();
       st = conexion.prepareStatement("INSERT INTO CITA VALUES(?, ?, ?)");
       st.setString(1, cita.getFecha());
       st.setString(2, cita.getHora());
