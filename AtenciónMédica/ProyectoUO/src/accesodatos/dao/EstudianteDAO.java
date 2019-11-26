@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import logica.Estudiante;
 
 /**
- * Clase EstudianteDAO, está clse ayuda a tener contacto con la base de datos del sistema.
+ * Clase EstudianteDAO, está clse ayuda a tener contacto con la Base de Datos del sistema.
  * 
  * @author Karla Fernanda Guevara Flores
  * @version 1.0
@@ -22,13 +22,16 @@ import logica.Estudiante;
 public class EstudianteDAO {
   
   /**
-   * Método que ayuda a la interfaz gráfica ha agregar un Estudiante a la base de datos del sistema.
+   * Método que ayuda a la interfaz gráfica ha agregar un Estudiante a la base de datos del 
+   * sistema.
    * 
-   * @param estudiante el objeto Estduiante que se va agregar a la base de datos del sistema 
-   * @throws SQLException excepción de la base de datos SQL
+   * @param estudiante el objeto Estduiante que se va agregar a la Base de Datos del sistema  
+   * @throws SQLException excepción de la conexión con la Base de Datos de MySql
+   * @return validacion genera un retorno de valores
    */
-  public void registrarEstudiante (Estudiante estudiante) throws SQLException {
+  public boolean guardarEstudiante(Estudiante estudiante) throws SQLException {
     PreparedStatement st = null;
+    boolean validacion = false;
     try {
       Connection conexion = new ConnectionToBD().getConexion();
       st = conexion.prepareStatement("insert into estudiante values (?, ?, ?, ?, ?, ?)");
@@ -40,7 +43,9 @@ public class EstudianteDAO {
       st.setString(6, estudiante.getProgramaeducativo());
       st.executeUpdate();
       st.close();
+      validacion = true;
     } catch (SQLException ex) {
+        Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
       System.out.println("Error al ingresar a la base de datos");
     } finally {
       if (st != null) {
@@ -51,9 +56,16 @@ public class EstudianteDAO {
         }
       }
     }
+    return validacion;
   }
 
-  public List<Estudiante> obtenerEstudiantes() throws SQLException {
+  /**
+   * Método que muestra la lista de los Estudiantes registrados en la Base de Datos.
+   *
+   * @return genera un retorno de valores lista Estudiantes
+   * @throws SQLException excepción de la conexión con la Base de Datos de MySql
+   */
+  public List<Estudiante> mostrarEstudiantes() throws SQLException {
     List<Estudiante> estudiantes = new ArrayList<>();
     Estudiante estudiante;
     Connection conexion = null;
@@ -81,13 +93,20 @@ public class EstudianteDAO {
         }
       } catch (SQLException ex) {
         Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-        throw new SQLException("Error en labase de datos", ex);
+        throw new SQLException("Error en la base de datos", ex);
       }
     }
-    
     return estudiantes;
   }
   
+  /**
+   * Método que ayuda a buscar un Estudiante en la Base de Datos, según el id ingresado para su 
+   * busqueda.
+   *
+   * @param id id del estudiante a buscar
+   * @return genera un retorno de valores estudiante
+   * @throws SQLException excepción de la conexión con la Base de Datos de MySql
+   */
   public Estudiante buscarEstudiante (int id) throws SQLException{
     Connection conexion = null;
     Estudiante estudiante = null;
@@ -98,10 +117,12 @@ public class EstudianteDAO {
       ResultSet resultadoSQL = sentenciaSQL.executeQuery();
       if(resultadoSQL.next()) {
         estudiante = new Estudiante();
+        estudiante.setId(resultadoSQL.getInt("id_estudiante"));
         estudiante.setNombre(resultadoSQL.getString("nombre"));
-        estudiante.setId(resultadoSQL.getInt("id"));
         estudiante.setApellidoPaterno(resultadoSQL.getString("apellidoPaterno"));
         estudiante.setApellidoMaterno(resultadoSQL.getString("apellidoMaterno"));
+        estudiante.setMatricula(resultadoSQL.getString("matricula"));
+        estudiante.setProgramaeducativo(resultadoSQL.getString("programaEducativo"));
       }
       sentenciaSQL.close();
     }catch(SQLException ex){
@@ -112,7 +133,6 @@ public class EstudianteDAO {
         conexion.close();
       }
     }
-    
     return estudiante;
   } 
 }

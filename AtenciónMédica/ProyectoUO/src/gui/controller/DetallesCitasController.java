@@ -42,9 +42,11 @@ public class DetallesCitasController implements Initializable{
   private Button editarBtn;
   
   /**
+   * Método que mandaa llamar el metodo detallesEstudiantes que manda a llamar a la pantalla 
+   * Principal del sistema.
    * 
-   * @param event
-   * @throws IOException 
+   * @param event evento que da inicio al método
+   * @throws IOException excepción producida en operaciones interrumpidas
    */
   @FXML
   void detallesEstudiante (ActionEvent event) throws IOException{
@@ -84,12 +86,11 @@ public class DetallesCitasController implements Initializable{
     } catch (IOException ex) {
       Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
     }
-    
     if(!citas.isEmpty()){
       listaCitas.getItems().clear();
       listaCitas.setItems(FXCollections.observableArrayList(citas));
     }else{
-      //mensaje de que no hay citas
+      AlertaController.mensajeInformacion("No hay citas registrdas");
     }
   }
 

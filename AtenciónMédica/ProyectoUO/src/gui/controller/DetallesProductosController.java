@@ -23,14 +23,15 @@ import javafx.stage.StageStyle;
 import logica.Producto;
 
 /**
- * Clase que controla la pantalla DetallesProductos
- * 
- * @author Karla Fernanda Guevara Flores 
+ * Clase que controla la pantalla DetallesProductos, donde se muestra la información en la Base
+ * de Datos de los productos.
+ *
+ * @author Karla Fernanda Guevara Flores
  * @version 1.0
  * @since 13-11-2019
  */
-public class DetallesProductosController implements Initializable{
-  
+public class DetallesProductosController implements Initializable {
+
   @FXML
   private ListView<Producto> listaProductos;
   @FXML
@@ -39,13 +40,13 @@ public class DetallesProductosController implements Initializable{
   private Button registrarBtn;
   @FXML
   private Button editarBtn;
-  
+
   @FXML
   void principal(ActionEvent event) throws IOException {
     DetallesEstudiantesController detalles = new DetallesEstudiantesController();
     detalles.principal(event);
   }
-  
+
   @FXML
   void registrarProductos(ActionEvent event) throws IOException {
     ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -56,7 +57,7 @@ public class DetallesProductosController implements Initializable{
     stage.setScene(scene);
     stage.show();
   }
-  
+
   @FXML
   void editarProductos(ActionEvent event) throws IOException {
     ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -67,7 +68,13 @@ public class DetallesProductosController implements Initializable{
     stage.setScene(scene);
     stage.show();
   }
-  
+
+  /**
+   * Método que carga los datos de los productos registrado en la Base de Datos.
+   *
+   * @throws SQLException excepción de la conexión con la Base de datos de MySql
+   * @throws IOException excepción producida en operaciones interrumpidas
+   */
   public void mostrarProductos() throws SQLException, IOException {
     ProductoDAO productodao = new ProductoDAO();
     List<Producto> productos = null;
@@ -76,12 +83,10 @@ public class DetallesProductosController implements Initializable{
     } catch (SQLException ex) {
       AlertaController.mensajeAdvertencia("Ocurrio un error en la base de datos");
     }
-    
-    if(productos != null){
-      listaProductos.getItems().clear(); 
+    if (productos != null) {
+      listaProductos.getItems().clear();
       listaProductos.setItems(FXCollections.observableArrayList(productos));
     }
-        
   }
 
   @Override
@@ -94,4 +99,5 @@ public class DetallesProductosController implements Initializable{
       Logger.getLogger(DetallesProductosController.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
+  
 }

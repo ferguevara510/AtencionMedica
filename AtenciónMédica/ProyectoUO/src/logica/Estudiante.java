@@ -33,6 +33,10 @@ public class Estudiante {
     this.matricula = matricula;
     this.programaeducativo = programaeducativo;
   }
+
+  /**
+   * Constructor vacio de la clase Estudiante.
+   */
   public Estudiante() {
   }
 
@@ -86,10 +90,8 @@ public class Estudiante {
 
   @Override
   public String toString() {
-    return "Estudiante{" + "nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno 
-            + ", apellidoMaterno=" + apellidoMaterno + ", matricula=" + matricula 
-            + ", programaeducativo=" + programaeducativo + '}';
+    return  " Nombre completo: " + nombre + " " + apellidoPaterno + " " + apellidoMaterno 
+            + "  Matricula: " + matricula + "  Programa Educativo: " + programaeducativo;
   }
-  
-  
+
 }

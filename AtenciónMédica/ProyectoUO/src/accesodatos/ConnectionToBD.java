@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Clase para crear la conexión con la base de datos del sistema.
+ * Clase para crear la conexión con la Base de Datos del sistema.
  * 
  * @author Karla Fernanda Guevara Flores
  * @version 1.0
@@ -16,16 +16,15 @@ public class ConnectionToBD {
   private Connection conexion;
    
   /** 
-   * Metodo que abre la conexión con la base de datos de MySql.
+   * Metodo que crea la conexión con la base de datos "atencionmedica" de MySql.
    * 
-   * @throws SQLException conexión con la base de datosde MySql
+   * @throws SQLException excepción de la conexión con la Base de Datos de MySql
    */
   public ConnectionToBD() throws SQLException {
     String iP = "localhost";
-    String usuario = "root";
-    String contraseña = "Karlita510";
+    String usuario = "usuarioBD";
+    String contraseña = "m3d1c@m3nt0s";
     String baseDeDatos = "atencionmedica";
-
     try {
       Class.forName("com.mysql.jdbc.Driver").newInstance();
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
@@ -40,20 +39,20 @@ public class ConnectionToBD {
   }
   
   /**
-   * Genera la conexion a la BDD.
+   * Genera la conexion a la Base de Datos.
    * 
-   * @return genera un retorno de valores
-   * @throws java.sql.SQLException conexión con la base de datos de MySql
+   * @return conexion genera un retorno de valores
+   * @throws java.sql.SQLException excepción de la conexión con la Base de Datos de MySql
    */
   public Connection getConexion() throws SQLException {
     return this.conexion;
   }
 
   /**
-   * Cierra la conexion a la BDD.
+   * Cierra la conexion a la Base de Datos.
    * 
-   * @return genera un retorno de valores
-   * @throws java.sql.SQLException conexión con la base de datos de MySql
+   * @return cierre de la conexión de la Base de Datos genera un retorno de valores
+   * @throws java.sql.SQLException excepción de la conexión con la Base de Datos de MySql
    */
   public boolean cerrarConexion() throws SQLException {
     try {
@@ -63,7 +62,6 @@ public class ConnectionToBD {
     } catch (SQLException sqlEx) {
       throw new SQLException("Error al cerrar la conexion a la base de datos");
     }
-    
     return this.conexion == null || this.conexion.isClosed();
   }
    

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package accesodatos.dao;
 
 import java.util.List;
@@ -47,7 +42,7 @@ public class EstudianteDAOTest {
     System.out.println("registrarEstudiante");
     Estudiante estudiante = null;
     EstudianteDAO instance = new EstudianteDAO();
-    instance.registrarEstudiante(estudiante);
+    instance.guardarEstudiante(estudiante);
     // TODO review the generated test code and remove the default call to fail.
     fail("The test case is a prototype.");
   }
@@ -56,11 +51,11 @@ public class EstudianteDAOTest {
    * Test of obtenerEstudiantes method, of class EstudianteDAO.
    */
   @Test
-  public void testObtenerEstudiantes() throws Exception {
+  public void testMostarEstudiantes() throws Exception {
     System.out.println("obtenerEstudiantes");
     EstudianteDAO instance = new EstudianteDAO();
     List<Estudiante> expResult = null;
-    List<Estudiante> result = instance.obtenerEstudiantes();
+    List<Estudiante> result = instance.mostrarEstudiantes();
     assertEquals(expResult, result);
     // TODO review the generated test code and remove the default call to fail.
     fail("The test case is a prototype.");

@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #9FA8DA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DetallesCitasController">
+<VBox prefHeight="500.0" prefWidth="1100.0" style="-fx-background-color: #9FA8DA;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.DetallesCitasController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="69.0" fitWidth="117.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="586.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@../../../../../prototipos/Pantallas/imagenes/uv-icono.png" />
+                  <Image url="@imagenes/uv-icono.png" />
                </image>
             </ImageView>
             <Label layoutX="285.0" layoutY="47.0" text="ATENCIÓN MÉDICA">

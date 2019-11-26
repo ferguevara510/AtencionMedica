@@ -21,7 +21,6 @@ public class RegistroProductoController {
 
   @FXML
   private Button aceptarBtn;
-  
   @FXML
   private Button cancelarBtn;
   @FXML
@@ -51,8 +50,8 @@ public class RegistroProductoController {
         } catch (SQLException e) {
           AlertaController.mensajeAdvertencia("Error base de datos");
         }
-        DetallesEstudiantesController detalles = new DetallesEstudiantesController();
-        detalles.principal(event);
+        PrincipalController detalles = new PrincipalController();
+        detalles.detallesProductos(event);
       } catch (RuntimeException e) {
         AlertaController.mensajeInformacion("Error de llenado");
       }
@@ -62,15 +61,16 @@ public class RegistroProductoController {
   }
   
   private boolean validarDatos() {
-    if (nombreTF.getText().isEmpty()) {
+    if (nombreTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (presentacionTF.getText().isEmpty()) {
+    if (presentacionTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (existenciasTF.getText().isEmpty()) {
+    if (existenciasTF.getText().trim().isEmpty()) {
       return false;
     }
     return true;
   }
+  
 }

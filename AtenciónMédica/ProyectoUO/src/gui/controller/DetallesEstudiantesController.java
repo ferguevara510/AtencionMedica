@@ -1,19 +1,19 @@
 package gui.controller;
 
-import accesodatos.ConnectionToBD;
 import accesodatos.dao.EstudianteDAO;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,16 +24,17 @@ import javafx.stage.StageStyle;
 import logica.Estudiante;
 
 /**
- * Clase que controla la pantalla DetallesEstudiantes
+ * Clase que controla la pantalla DetallesEstudiantes, donde se muestra la información que 
+ * está registrada en la Base de Datos.
  * 
  * @author Karla Fernanda Guevara Flores 
  * @version 1.0
  * @since 13-11-2019
  */
-public class DetallesEstudiantesController {
+public class DetallesEstudiantesController implements Initializable{
   
   @FXML
-  private ListView<String> listaEstudiantes;
+  private ListView<Estudiante> listaEstudiantes;
   @FXML
   private Button cancelarBtn;
   @FXML
@@ -42,11 +43,11 @@ public class DetallesEstudiantesController {
   private Button citasBtn;
   
   /**
-   * Método que abre la pantalla Principal, donde se visualiza las dos opciones para administrar en
-   * el sistema.
+   * Método que abre la pantalla Principal, donde se visualiza las dos opciones para administrar
+   * en el sistema.
    * 
-   * @param event
-   * @throws IOException 
+   * @param event evento que da inicio al método
+   * @throws IOException excepción producida en operaciones interrumpidas
    */
   @FXML  
   public void principal(ActionEvent event) throws IOException {
@@ -76,8 +77,8 @@ public class DetallesEstudiantesController {
    * Método que abre la pantalla DetallesCitas, donde se visualiza los datos de las Citas de los
    * Estudiantres registrados en el sistema.
    * 
-   * @param event
-   * @throws IOException 
+   * @param event evento que da inicio al método
+   * @throws IOException excepción producida en operaciones interrumpidas
    */
   @FXML
   public void detallesCitas(ActionEvent event) throws IOException {
@@ -90,24 +91,28 @@ public class DetallesEstudiantesController {
     stage.show();
   }
   
+  /**
+   * Carga los usuarios guardados en la Base de Datos en la lista.
+   */
   private void mostrarEstudiantes(){
-    EstudianteDAO estudiantedao= new EstudianteDAO();
-    List<Estudiante> citas = new ArrayList<>();
+    EstudianteDAO estudianteDAO = new EstudianteDAO();
+    List<Estudiante> estudiantes = new ArrayList<>();
     try {
-      citas = citaDAO.mostrarCitas();
+      estudiantes = estudianteDAO.mostrarEstudiantes();
     } catch (SQLException ex) {
       Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
-    } catch (IOException ex) {
-      Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
     }
-    
-    if(!citas.isEmpty()){
-      listaCitas.getItems().clear();
-      listaCitas.setItems(FXCollections.observableArrayList(citas));
+    if(!estudiantes.isEmpty()){
+      listaEstudiantes.getItems().clear();
+      listaEstudiantes.setItems(FXCollections.observableArrayList(estudiantes));
     }else{
-      //mensaje de que no hay citas
+      AlertaController.mensajeInformacion("No hay usuarios guardados");
     }
   }
-  
-  
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.mostrarEstudiantes();
+    }
+    
 }

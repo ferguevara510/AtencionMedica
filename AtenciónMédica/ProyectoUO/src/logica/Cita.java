@@ -18,7 +18,6 @@ public class Cita {
    * 
    * @param fecha atributo de la fecha de la Cita
    * @param hora atributo de la hora de la Cita
-   * @param minutos atributo de los minutos de la Cita
    * @param estudiante atributo del Estudiante de la Cita
    */
   public Cita(String fecha, String hora, Estudiante estudiante) {
@@ -27,6 +26,9 @@ public class Cita {
     this.estudiante = estudiante;
   }
 
+  /**
+   * Constructor vacio de la clase Cita.
+   */
   public Cita() {
   }
   
@@ -56,7 +58,7 @@ public class Cita {
 
   @Override
   public String toString() {
-    return "Cita{" + "fecha=" + fecha + ", hora=" + hora + ", estudiante=" + estudiante + '}';
+    return  " " + fecha + "  " + hora + "  Estudiante: " + estudiante;
   }
   
 }

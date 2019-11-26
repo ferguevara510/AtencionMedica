@@ -30,8 +30,8 @@ public class PrincipalController {
    * Método que abre la pantalla DetallesEstudiantes, donde se visualiza los datos de los 
    * Estudiantres registrados en el sistema. 
    *
-   * @param event
-   * @throws IOException 
+   * @param event evento que da inicio al método
+   * @throws IOException excepción producida en operaciones interrumpidas
    */
   @FXML
   public void detallesEstudiantes(ActionEvent event) throws IOException {
@@ -48,8 +48,8 @@ public class PrincipalController {
    * Abre la pantalla DetallesProductos, donde se visualiza los datos de los Productos 
    * registrados en el sistema. 
    *
-   * @param event
-   * @throws IOException 
+   * @param event evento que da inicio al método
+   * @throws IOException excepción producida en operaciones interrumpidas
    */
   @FXML
   public void detallesProductos(ActionEvent event) throws IOException {

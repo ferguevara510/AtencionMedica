@@ -9,6 +9,7 @@ package logica;
  */
 public class Producto {
   
+  private int id;
   private String nombre;
   private String presentacion;
   private int existencias;
@@ -26,13 +27,20 @@ public class Producto {
     this.existencias  = existencias;
   }
 
+  /**
+   * Constructor vacio de la clase Producto.
+   */
   public Producto() {
   }
 
-  /**
-   * Método 
-   * @return 
-   */
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+  
   public int getExistencias() {
     return existencias;
   }
@@ -59,8 +67,8 @@ public class Producto {
 
   @Override
   public String toString() {
-    return "Producto{" + "nombre=" + nombre + ", presentacion=" + presentacion + ", existencias=" 
-            + existencias + '}';
+    return " Nombre: " + nombre + "  Presentacion: " + presentacion + "  Existencias: " 
+            + existencias;
   }
   
 }

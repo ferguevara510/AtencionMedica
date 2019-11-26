@@ -1,11 +1,7 @@
 package gui.controller;
 
-import accesodatos.ConnectionToBD;
 import accesodatos.dao.ProductoDAO;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,7 +32,7 @@ public class EditarProductoController {
   @FXML
   private TextField buscadorTF;
   @FXML
-  private Button BuscarBtn;
+  private Producto producto;
   
   @FXML
   void detallesProducto (ActionEvent event) throws IOException {
@@ -52,14 +48,15 @@ public class EditarProductoController {
         String presentacion = presentacionTF.getText();
         int existencias = Integer.parseInt(existenciasTF.getText());
         Producto producto = new Producto(existencias, nombre, presentacion);
+        producto.setId(this.producto.getId());
         ProductoDAO productodao = new ProductoDAO();
         try {
-          productodao.registrarProducto(producto);
+          productodao.editarProducto(producto);
         } catch (SQLException e) {
           AlertaController.mensajeAdvertencia("Error base de datos");
         }
-        DetallesEstudiantesController detalles = new DetallesEstudiantesController();
-        detalles.principal(event);
+        PrincipalController principal = new PrincipalController();
+        principal.detallesProductos(event);
       } catch (RuntimeException e) {
         AlertaController.mensajeInformacion("Error de llenado");
       }
@@ -70,32 +67,26 @@ public class EditarProductoController {
   
   @FXML
   void buscarProducto (ActionEvent event) throws SQLException {
-    try {
-      Connection conexion = new ConnectionToBD().getConexion();
-      PreparedStatement ps =
-            (PreparedStatement) conexion.prepareStatement("select * from software");
-      ResultSet rs = ps.executeQuery();
-      while (rs.next()) {
-        String producto = rs.getString("nombre");
-        String nombre = buscadorTF.getText();
-        if (producto.equals(nombre)){
-          presentacionTF.setText(rs.getString("presentacion"));
-          existenciasTF.setText(rs.getString("existencias"));
-        } 
-      }
-    } catch (Exception e) {
-          AlertaController.mensajeInformacion("No se encontró en la base de datos");
+    ProductoDAO productoDAO = new ProductoDAO();
+    Producto producto = productoDAO.buscarProducto(buscadorTF.getText().trim());
+    if(producto != null){
+        nombreTF.setText(producto.getNombre());
+        presentacionTF.setText(producto.getPresentacion());
+        existenciasTF.setText(""+producto.getExistencias());
+        this.producto = producto;
+    }else{
+        AlertaController.mensajeInformacion("No se encontro un producto con este nombre");
     }
   }
   
   private boolean validarDatos() {
-    if (nombreTF.getText().isEmpty()) {
+    if (nombreTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (presentacionTF.getText().isEmpty()) {
+    if (presentacionTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (existenciasTF.getText().isEmpty()) {
+    if (existenciasTF.getText().trim().isEmpty()) {
       return false;
     }
     return true;

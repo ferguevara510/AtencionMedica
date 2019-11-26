@@ -66,7 +66,7 @@ public class RegistroEstudianteController implements Initializable {
                 matricula, programaEducativo);
         EstudianteDAO estudiantedao = new EstudianteDAO();
         try {
-          estudiantedao.registrarEstudiante(estudiante);
+          estudiantedao.guardarEstudiante(estudiante);
         } catch (SQLException e) {
           AlertaController.mensajeAdvertencia("Error base de datos");
         }
@@ -81,20 +81,20 @@ public class RegistroEstudianteController implements Initializable {
   }
   
   private boolean validarDatos() {
-    if (nombreTF.getText().isEmpty()) {
+    if (nombreTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (apellidoPaternoTF.getText().isEmpty()) {
+    if (apellidoPaternoTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (apellidoMaternoTF.getText().isEmpty()) {
+    if (apellidoMaternoTF.getText().trim().isEmpty()) {
       return false;
     }
-    if (matriculaTF.getText().isEmpty()) {
+    if (matriculaTF.getText().trim().isEmpty()) {
       return false;
     }
-    String programaEducativo = "" + programaEducativoCB.getValue();
-    if (programaEducativo.equals("")) {
+    String programaEducativo = programaEducativoCB.getValue();
+    if (programaEducativo == null) {
       return false;
     }
     return true;
