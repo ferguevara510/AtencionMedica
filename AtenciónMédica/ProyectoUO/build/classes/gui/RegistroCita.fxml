@@ -26,7 +26,7 @@
             </Label>
             <Label blendMode="COLOR_BURN" layoutX="81.0" layoutY="119.0" text="Fecha" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="120.0" />
             <Label blendMode="COLOR_BURN" layoutX="83.0" layoutY="175.0" text="Hora" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="165.0" />
-            <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="137.0" layoutY="138.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" />
+            <Button id="aceptarBtn" fx:id="aceptarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="137.0" layoutY="138.0" style="-fx-background-radius: 50;" text="Aceptar" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="80.0" onAction="#registroCita" />
             <Button id="cancelarBtn" fx:id="cancelarBtn" blendMode="COLOR_BURN" cache="true" cacheHint="ROTATE" layoutX="137.0" layoutY="163.0" onAction="#detallesCita" style="-fx-background-radius: 50;" text="Cancelar" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" />
             <ComboBox id="horasCB" fx:id="horasCB" blendMode="COLOR_BURN" layoutX="139.0" layoutY="171.0" prefHeight="25.0" prefWidth="270.0" promptText="Horas" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="160.0" />
             <DatePicker id="fechaDP" fx:id="fechaDP" blendMode="COLOR_BURN" layoutX="140.0" layoutY="115.0" prefHeight="25.0" prefWidth="172.0" promptText="Selecciona fecha" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="115.0" />

@@ -9,6 +9,7 @@ package logica;
  */
 public class Estudiante {
   
+  private int id;
   private String nombre;
   private String apellidoPaterno;
   private String apellidoMaterno;
@@ -32,7 +33,17 @@ public class Estudiante {
     this.matricula = matricula;
     this.programaeducativo = programaeducativo;
   }
+  public Estudiante() {
+  }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+  
   public String getNombre() {
     return nombre;
   }
@@ -72,10 +83,13 @@ public class Estudiante {
   public void setProgramaeducativo(String programaeducativo) {
     this.programaeducativo = programaeducativo;
   }
-  
+
   @Override
-  public String toString(){
-    return nombre + apellidoPaterno + apellidoMaterno;
+  public String toString() {
+    return "Estudiante{" + "nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno 
+            + ", apellidoMaterno=" + apellidoMaterno + ", matricula=" + matricula 
+            + ", programaeducativo=" + programaeducativo + '}';
   }
+  
   
 }

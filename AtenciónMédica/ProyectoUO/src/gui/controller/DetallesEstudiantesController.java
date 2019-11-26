@@ -1,11 +1,14 @@
 package gui.controller;
 
 import accesodatos.ConnectionToBD;
+import accesodatos.dao.EstudianteDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import logica.Estudiante;
 
 /**
  * Clase que controla la pantalla DetallesEstudiantes
@@ -86,29 +90,24 @@ public class DetallesEstudiantesController {
     stage.show();
   }
   
-  @FXML
-  void buscarEstudiante(ActionEvent event) throws SQLException {
-    listaEstudiantes.getItems().clear();
+  private void mostrarEstudiantes(){
+    EstudianteDAO estudiantedao= new EstudianteDAO();
+    List<Estudiante> citas = new ArrayList<>();
     try {
-      Connection conexion = ConnectionToBD.conectar ("root", "Karlita510", "atencionmedica", 
-              "localhost");
-      PreparedStatement ps = (PreparedStatement) conexion.prepareStatement
-        ("select * from estudiante");
-      ResultSet rs = ps.executeQuery(); {
-      while (rs.next()) {
-        String estudiante = rs.getString(" nombre ") + " nombre | " 
-                + rs.getString(" apellidoPaterno ") + " apellidoPaterno | "
-                + rs.getString(" apellidoMaterno ") + " apellidoMaterno | "
-                + rs.getString(" matricula ") + " matricula | "
-                + rs.getString(" programaEducativo ") + " programaEducativo | ";
-        ObservableList<String> list = FXCollections.observableArrayList(estudiante);
-        list.add(estudiante);
-        listaEstudiantes.getItems().addAll(list);
-      }
+      citas = citaDAO.mostrarCitas();
+    } catch (SQLException ex) {
+      Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+      Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
     }
-    } catch (Exception e) {
-      System.out.println("error");
+    
+    if(!citas.isEmpty()){
+      listaCitas.getItems().clear();
+      listaCitas.setItems(FXCollections.observableArrayList(citas));
+    }else{
+      //mensaje de que no hay citas
     }
   }
+  
   
 }

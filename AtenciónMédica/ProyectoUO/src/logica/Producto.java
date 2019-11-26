@@ -11,7 +11,7 @@ public class Producto {
   
   private String nombre;
   private String presentacion;
-  private int    existencias;
+  private int existencias;
 
   /**
    * Constructor de la clase Producto.
@@ -24,6 +24,9 @@ public class Producto {
     this.nombre       = nombre;
     this.presentacion = presentacion;
     this.existencias  = existencias;
+  }
+
+  public Producto() {
   }
 
   /**
@@ -53,6 +56,11 @@ public class Producto {
   public void setPresentacion(String presentacion) {
     this.presentacion = presentacion;
   }
+
+  @Override
+  public String toString() {
+    return "Producto{" + "nombre=" + nombre + ", presentacion=" + presentacion + ", existencias=" 
+            + existencias + '}';
+  }
   
-    
 }

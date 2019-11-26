@@ -27,6 +27,9 @@ public class Cita {
     this.estudiante = estudiante;
   }
 
+  public Cita() {
+  }
+  
   public String getFecha() {
     return fecha;
   }
@@ -51,4 +54,9 @@ public class Cita {
     this.estudiante = estudiante;
   }
 
+  @Override
+  public String toString() {
+    return "Cita{" + "fecha=" + fecha + ", hora=" + hora + ", estudiante=" + estudiante + '}';
+  }
+  
 }

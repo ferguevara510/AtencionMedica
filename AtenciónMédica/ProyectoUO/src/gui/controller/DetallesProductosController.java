@@ -1,9 +1,18 @@
 package gui.controller;
 
+import accesodatos.dao.ProductoDAO;
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import logica.Producto;
 
 /**
  * Clase que controla la pantalla DetallesProductos
@@ -19,10 +29,10 @@ import javafx.stage.StageStyle;
  * @version 1.0
  * @since 13-11-2019
  */
-public class DetallesProductosController {
+public class DetallesProductosController implements Initializable{
   
   @FXML
-  private ListView<?> listaProductos;
+  private ListView<Producto> listaProductos;
   @FXML
   private Button cancelarBtn;
   @FXML
@@ -56,5 +66,32 @@ public class DetallesProductosController {
     stage.initStyle(StageStyle.TRANSPARENT);
     stage.setScene(scene);
     stage.show();
+  }
+  
+  public void mostrarProductos() throws SQLException, IOException {
+    ProductoDAO productodao = new ProductoDAO();
+    List<Producto> productos = null;
+    try {
+      productos = productodao.mostrarProductos();
+    } catch (SQLException ex) {
+      AlertaController.mensajeAdvertencia("Ocurrio un error en la base de datos");
+    }
+    
+    if(productos != null){
+      listaProductos.getItems().clear(); 
+      listaProductos.setItems(FXCollections.observableArrayList(productos));
+    }
+        
+  }
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    try {
+      this.mostrarProductos();
+    } catch (SQLException ex) {
+      Logger.getLogger(DetallesProductosController.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+      Logger.getLogger(DetallesProductosController.class.getName()).log(Level.SEVERE, null, ex);
+    }
   }
 }

@@ -4,7 +4,10 @@ import accesodatos.ConnectionToBD;
 import gui.controller.PrincipalController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import logica.Estudiante;
@@ -28,12 +31,13 @@ public class EstudianteDAO {
     PreparedStatement st = null;
     try {
       Connection conexion = new ConnectionToBD().getConexion();
-      st = conexion.prepareStatement("insert into estudiante values (?, ?, ?, ?, ?)");
-      st.setString(1, estudiante.getNombre());
-      st.setString(2, estudiante.getApellidoPaterno());
-      st.setString(3, estudiante.getApellidoMaterno());
-      st.setString(4, estudiante.getMatricula());
-      st.setString(5, estudiante.getProgramaeducativo());
+      st = conexion.prepareStatement("insert into estudiante values (?, ?, ?, ?, ?, ?)");
+      st.setString(1, null);
+      st.setString(2, estudiante.getNombre());
+      st.setString(3, estudiante.getApellidoPaterno());
+      st.setString(4, estudiante.getApellidoMaterno());
+      st.setString(5, estudiante.getMatricula());
+      st.setString(6, estudiante.getProgramaeducativo());
       st.executeUpdate();
       st.close();
     } catch (SQLException ex) {
@@ -48,5 +52,67 @@ public class EstudianteDAO {
       }
     }
   }
+
+  public List<Estudiante> obtenerEstudiantes() throws SQLException {
+    List<Estudiante> estudiantes = new ArrayList<>();
+    Estudiante estudiante;
+    Connection conexion = null;
+    try {
+      conexion = new ConnectionToBD().getConexion();
+      PreparedStatement sentenciaSQL = conexion.prepareStatement("select * from estudiante");
+      ResultSet resultadoSQL = sentenciaSQL.executeQuery();
+      while (resultadoSQL.next()) {
+        estudiante = new Estudiante();
+        estudiante.setNombre(resultadoSQL.getString("nombre"));
+        estudiante.setApellidoPaterno(resultadoSQL.getString("apellidoPaterno"));
+        estudiante.setApellidoMaterno(resultadoSQL.getString("apellidoMaterno"));
+        estudiante.setMatricula(resultadoSQL.getString("matricula"));
+        estudiante.setId(resultadoSQL.getInt("id_estudiante"));
+        estudiante.setProgramaeducativo(resultadoSQL.getString(("programaEducativo")));
+        estudiantes.add(estudiante);
+      }
+    } catch (SQLException ex) {
+      Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+      throw new SQLException("Error en la base de datos", ex);
+    } finally {
+      try {
+        if (conexion != null) {
+          conexion.close();
+        }
+      } catch (SQLException ex) {
+        Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        throw new SQLException("Error en labase de datos", ex);
+      }
+    }
+    
+    return estudiantes;
+  }
   
+  public Estudiante buscarEstudiante (int id) throws SQLException{
+    Connection conexion = null;
+    Estudiante estudiante = null;
+    try {
+      conexion = new ConnectionToBD().getConexion();
+      PreparedStatement sentenciaSQL = conexion.prepareStatement("select * from estudiante where id_estudiante = ?");
+      sentenciaSQL.setInt(1, id);
+      ResultSet resultadoSQL = sentenciaSQL.executeQuery();
+      if(resultadoSQL.next()) {
+        estudiante = new Estudiante();
+        estudiante.setNombre(resultadoSQL.getString("nombre"));
+        estudiante.setId(resultadoSQL.getInt("id"));
+        estudiante.setApellidoPaterno(resultadoSQL.getString("apellidoPaterno"));
+        estudiante.setApellidoMaterno(resultadoSQL.getString("apellidoMaterno"));
+      }
+      sentenciaSQL.close();
+    }catch(SQLException ex){
+      Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+      throw new SQLException("No se encontro el usuario con el id: "+ id, ex);
+    }finally{
+      if(conexion != null){
+        conexion.close();
+      }
+    }
+    
+    return estudiante;
+  } 
 }

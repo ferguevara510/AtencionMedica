@@ -71,8 +71,7 @@ public class EditarProductoController {
   @FXML
   void buscarProducto (ActionEvent event) throws SQLException {
     try {
-      Connection conexion = ConnectionToBD.conectar("root", "Karlita510", "atencionMedica", 
-              "localhost");
+      Connection conexion = new ConnectionToBD().getConexion();
       PreparedStatement ps =
             (PreparedStatement) conexion.prepareStatement("select * from software");
       ResultSet rs = ps.executeQuery();

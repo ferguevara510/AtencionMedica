@@ -1,9 +1,19 @@
 package gui.controller;
 
+import accesodatos.dao.CitaDAO;
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import logica.Cita;
 
 /**
  * Clase que controla la pantalla DetallesCitas, donde se visualiza la información de las Citas.
@@ -19,10 +30,10 @@ import javafx.stage.StageStyle;
  * @version 1.0
  * @since 13-11-2019
  */
-public class DetallesCitasController {
+public class DetallesCitasController implements Initializable{
   
   @FXML
-  private ListView<?> listaCitas;
+  private ListView<Cita> listaCitas;
   @FXML
   private Button cancelarBtn;
   @FXML
@@ -61,6 +72,30 @@ public class DetallesCitasController {
     stage.initStyle(StageStyle.TRANSPARENT);
     stage.setScene(scene);
     stage.show();
+  }
+  
+  private void mostrarCitas(){
+    CitaDAO citaDAO = new CitaDAO();
+    List<Cita> citas = new ArrayList<>();
+    try {
+      citas = citaDAO.mostrarCitas();
+    } catch (SQLException ex) {
+      Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+      Logger.getLogger(DetallesCitasController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    if(!citas.isEmpty()){
+      listaCitas.getItems().clear();
+      listaCitas.setItems(FXCollections.observableArrayList(citas));
+    }else{
+      //mensaje de que no hay citas
+    }
+  }
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    this.mostrarCitas();
   }
   
 }

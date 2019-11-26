@@ -48,9 +48,9 @@ public class RegistroEstudianteController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     programaEducativoCB.getItems().clear();
-    programaEducativoCB.setItems(FXCollections.observableArrayList("Ingeniería de software",
-            "Tecnologías Computacionales", "Redes y Servicios de Cómputo", "Estadística",
-            "Informatica", "Ciencias y Tecnicas Estadísticas"));
+    programaEducativoCB.setItems(FXCollections.observableArrayList("Ingenieria de software",
+            "Tecnologias Computacionales", "Redes y Servicios de Computo", "Estadistica",
+            "Informatica", "Ciencias y Tecnicas Estadisticas"));
   }
   
   @FXML
@@ -61,7 +61,7 @@ public class RegistroEstudianteController implements Initializable {
         String apellidoPaterno = apellidoPaternoTF.getText();
         String apellidoMaterno = apellidoMaternoTF.getText();
         String matricula = matriculaTF.getText();
-        String programaEducativo = programaEducativoCB.toString();
+        String programaEducativo = (String) programaEducativoCB.getValue();
         Estudiante estudiante = new Estudiante(nombre, apellidoPaterno, apellidoMaterno, 
                 matricula, programaEducativo);
         EstudianteDAO estudiantedao = new EstudianteDAO();
