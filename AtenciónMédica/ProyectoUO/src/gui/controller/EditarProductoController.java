@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import logica.Producto;
 
 /**
@@ -90,6 +91,30 @@ public class EditarProductoController {
       return false;
     }
     return true;
+  }
+  
+  @FXML
+  void restringirCampoExistencias(KeyEvent evento) {
+    restringirCaracteres(evento, existenciasTF.getText());
+  }
+
+  private void restringirCaracteres(KeyEvent evento, String cadena) {
+    if (cadena.length() > 2) {
+      evento.consume();
+    }
+  }
+
+  @FXML
+  private void soloNumeros(KeyEvent evento) {
+    char caracter = evento.getCharacter().charAt(0);
+    if (Character.isDigit(caracter) || caracter == '.') {
+      if (existenciasTF.getText().split("\\.").length < 2 || Character.isDigit(caracter)) {
+      } else {
+        evento.consume();
+      }
+    } else {
+      evento.consume();
+    }
   }
   
 }

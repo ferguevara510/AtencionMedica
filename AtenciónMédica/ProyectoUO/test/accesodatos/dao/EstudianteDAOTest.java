@@ -1,64 +1,47 @@
 package accesodatos.dao;
 
 import java.util.List;
+import junit.framework.TestCase;
 import logica.Estudiante;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
- *
- * @author JENNY
+ * Clase de pruebas unitarias de la clase EstudianteDAO del sistema.
+ * 
+ * @author Karla Fernanda Guevara Flores
+ * @version 1.0
+ * @since 25-11-2019
  */
-public class EstudianteDAOTest {
-  
-  public EstudianteDAOTest() {
-  }
-  
-  @BeforeClass
-  public static void setUpClass() {
-  }
-  
-  @AfterClass
-  public static void tearDownClass() {
-  }
-  
-  @Before
-  public void setUp() {
-  }
-  
-  @After
-  public void tearDown() {
-  }
-
-  /**
-   * Test of registrarEstudiante method, of class EstudianteDAO.
-   */
+public class EstudianteDAOTest extends TestCase{
+   
   @Test
-  public void testRegistrarEstudiante() throws Exception {
-    System.out.println("registrarEstudiante");
-    Estudiante estudiante = null;
-    EstudianteDAO instance = new EstudianteDAO();
-    instance.guardarEstudiante(estudiante);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
-  }
-
-  /**
-   * Test of obtenerEstudiantes method, of class EstudianteDAO.
-   */
-  @Test
-  public void testMostarEstudiantes() throws Exception {
-    System.out.println("obtenerEstudiantes");
-    EstudianteDAO instance = new EstudianteDAO();
-    List<Estudiante> expResult = null;
-    List<Estudiante> result = instance.mostrarEstudiantes();
+  public void testGuardarEstudiante() throws Exception {
+    System.out.println("guardarEstudiante");
+    Estudiante estudiante = new Estudiante();
+    estudiante.setNombre("Fernanda");
+    estudiante.setApellidoPaterno("Guevara");
+    estudiante.setApellidoMaterno("Flores");
+    estudiante.setMatricula("S15011604");
+    estudiante.setProgramaeducativo("Ingenieria de software");
+    boolean expResult = true;
+    boolean result = new EstudianteDAO().guardarEstudiante(estudiante);
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+  }
+
+  @Test
+  public void testMostrarEstudiantes() throws Exception {
+    System.out.println("mostrarEstudiantes");
+    EstudianteDAO instance = new EstudianteDAO();
+    List<Estudiante> result = instance.mostrarEstudiantes();
+    assertEquals(true, !result.isEmpty());
   }
   
+  @Test
+  public void testNoMostarEstudiantes() throws Exception {
+    System.out.println("mostrarEstudiantes");
+    EstudianteDAO instance = new EstudianteDAO();
+    List<Estudiante> result = instance.mostrarEstudiantes();
+    assertEquals(false, result.isEmpty());
+  }
+
 }

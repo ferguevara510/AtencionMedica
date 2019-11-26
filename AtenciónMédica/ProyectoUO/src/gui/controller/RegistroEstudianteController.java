@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import logica.Estudiante;
 
 /**
@@ -99,5 +100,60 @@ public class RegistroEstudianteController implements Initializable {
     }
     return true;
   }
-
+  
+  @FXML
+  void restringirCampoNombre(KeyEvent evento) {
+    restringirCaracteres(evento, nombreTF.getText());
+  }
+  
+  @FXML
+  void restringirCampoApellidoPaterno(KeyEvent evento) {
+    restringirCaracteres(evento, apellidoPaternoTF.getText());
+  }
+  
+  @FXML
+  void restringirCampoApellidoMaterno(KeyEvent evento) {
+    restringirCaracteres(evento, apellidoMaternoTF.getText());
+  }
+  
+  @FXML
+  void restringirCampoMatricula(KeyEvent evento) {
+    restringirCaracteresMatricula(evento, matriculaTF.getText());
+  }
+  
+  private void restringirCaracteres(KeyEvent evento, String cadena) {
+    if (cadena.length() > 99) {
+    evento.consume();
+    }
+  }
+  
+  private void restringirCaracteresMatricula(KeyEvent evento, String cadena) {
+    if (cadena.length() > 9) {
+    evento.consume();
+    }
+  }
+  
+  @FXML
+  private void restringirLetras(KeyEvent evento) {
+    char caracter = evento.getCharacter().charAt(0);
+    if (nombreTF.getText().length() > 6 || !Character.isDigit(caracter)) {
+      evento.consume();
+    }
+  }
+  
+  @FXML
+  private void restringirLetrasApellidoPaterno(KeyEvent evento) {
+    char caracter = evento.getCharacter().charAt(0);
+    if (apellidoPaternoTF.getText().length() > 6 || !Character.isDigit(caracter)) {
+      evento.consume();
+    }
+  }
+  
+  @FXML
+  private void restringirLetrasApellidoMaterno(KeyEvent evento) {
+    char caracter = evento.getCharacter().charAt(0);
+    if (apellidoMaternoTF.getText().length() > 6 || !Character.isDigit(caracter)) {
+      evento.consume();
+    }
+  }
 }

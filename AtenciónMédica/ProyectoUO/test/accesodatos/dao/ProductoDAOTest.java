@@ -1,82 +1,53 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package accesodatos.dao;
 
 import java.util.List;
+import junit.framework.TestCase;
 import logica.Producto;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
- *
- * @author JENNY
+ * Clase de pruebas unitarias de la clase ProductoDAO del sistema.
+ * 
+ * @author Karla Fernanda Guevara Flores
+ * @version 1.0
+ * @since 25-11-2019
  */
-public class ProductoDAOTest {
-  
-  public ProductoDAOTest() {
-  }
-  
-  @BeforeClass
-  public static void setUpClass() {
-  }
-  
-  @AfterClass
-  public static void tearDownClass() {
-  }
-  
-  @Before
-  public void setUp() {
-  }
-  
-  @After
-  public void tearDown() {
-  }
+public class ProductoDAOTest extends TestCase{
 
-  /**
-   * Test of registrarProducto method, of class ProductoDAO.
-   */
   @Test
   public void testRegistrarProducto() throws Exception {
     System.out.println("registrarProducto");
-    Producto producto = null;
+    Producto producto = new Producto();
+    producto.setNombre("Paracetamol");
+    producto.setPresentacion("Tabletas");
+    producto.setExistencias(6);
     ProductoDAO instance = new ProductoDAO();
     instance.registrarProducto(producto);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
   }
 
-  /**
-   * Test of editarProducto method, of class ProductoDAO.
-   */
   @Test
   public void testEditarProducto() throws Exception {
     System.out.println("editarProducto");
-    Producto producto = null;
+    Producto producto = new Producto(4,"Suspención", "Tempra");
+    producto.setExistencias(2);
     ProductoDAO instance = new ProductoDAO();
     instance.editarProducto(producto);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
   }
 
-  /**
-   * Test of mostrarProductos method, of class ProductoDAO.
-   */
   @Test
   public void testMostrarProductos() throws Exception {
     System.out.println("mostrarProductos");
     ProductoDAO instance = new ProductoDAO();
-    List<Producto> expResult = null;
     List<Producto> result = instance.mostrarProductos();
-    assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    assertEquals(true, !result.isEmpty());
+  }
+  
+  @Test
+  public void testNoMostrarProductos() throws Exception {
+    System.out.println("mostrarProductos");
+    ProductoDAO instance = new ProductoDAO();
+    List<Producto> result = instance.mostrarProductos();
+    assertEquals(false, result.isEmpty());
   }
   
 }

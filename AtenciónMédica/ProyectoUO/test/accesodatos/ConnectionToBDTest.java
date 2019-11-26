@@ -16,6 +16,10 @@ public class ConnectionToBDTest extends TestCase {
   public ConnectionToBDTest(String testName) {
     super(testName);
   }
+
+  /**
+   * Método de prueba de la conexión con la Base de Datos.
+   */
   public void testConexion() throws Exception {
     System.out.println("getConexion");
     ConnectionToBD instance = new ConnectionToBD();
@@ -24,7 +28,10 @@ public class ConnectionToBDTest extends TestCase {
     result = instance.getConexion();
     assertEquals(expResult, !result.isClosed());   
   }
-  
+
+  /**
+   * Método de prueba de cerra la conexión con la Base de Datos.
+   */
   public void testCerrarConexion() throws Exception {
     System.out.println("cerrarConexion");
     ConnectionToBD instance = new ConnectionToBD();

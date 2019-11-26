@@ -3,7 +3,6 @@ package proyectouo;
 import javafx.stage.Stage;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  * Clase de pruebas unitarias de la clase ProyectoUO del sistema.
@@ -22,7 +21,6 @@ public class ProyectoUOTest {
     System.out.println("main");
     String[] args = null;
     ProyectoUO.main(args);
-    fail("The test case is a prototype.");
   }
 
   /**
@@ -34,7 +32,6 @@ public class ProyectoUOTest {
     Stage primaryStage = null;
     ProyectoUO instance = new ProyectoUO();
     instance.start(primaryStage);
-    fail("The test case is a prototype.");
   }
   
 }

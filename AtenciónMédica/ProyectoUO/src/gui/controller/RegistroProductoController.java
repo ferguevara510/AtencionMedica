@@ -7,13 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import logica.Producto;
 
 /**
- * Clase que controla la pantalla RegistroProducto, donde se crea un nuevo registro de un
- * Producto en el sistema.
- * 
- * @author Karla Fernanda Guevara Flores 
+ * Clase que controla la pantalla RegistroProducto, donde se crea un nuevo registro de un Producto
+ * en el sistema.
+ *
+ * @author Karla Fernanda Guevara Flores
  * @version 1.0
  * @since 13-11-2019
  */
@@ -31,13 +32,13 @@ public class RegistroProductoController {
   private TextField presentacionTF;
 
   @FXML
-  void detallesProducto (ActionEvent event) throws IOException {
+  void detallesProducto(ActionEvent event) throws IOException {
     PrincipalController principal = new PrincipalController();
     principal.detallesProductos(event);
   }
-  
+
   @FXML
-  void registroProducto (ActionEvent event) throws IOException {
+  void registroProducto(ActionEvent event) throws IOException {
     if (validarDatos() == true) {
       try {
         String nombre = nombreTF.getText();
@@ -59,7 +60,7 @@ public class RegistroProductoController {
       AlertaController.mensajeAdvertencia("Error de llenado en los campos");
     }
   }
-  
+
   private boolean validarDatos() {
     if (nombreTF.getText().trim().isEmpty()) {
       return false;
@@ -72,5 +73,28 @@ public class RegistroProductoController {
     }
     return true;
   }
-  
+
+  @FXML
+  void restringirCampoExistencias(KeyEvent evento) {
+    restringirCaracteres(evento, existenciasTF.getText());
+  }
+
+  private void restringirCaracteres(KeyEvent evento, String cadena) {
+    if (cadena.length() > 2) {
+      evento.consume();
+    }
+  }
+
+  @FXML
+  private void soloNumeros(KeyEvent evento) {
+    char caracter = evento.getCharacter().charAt(0);
+    if (Character.isDigit(caracter) || caracter == '.') {
+      if (existenciasTF.getText().split("\\.").length < 2 || Character.isDigit(caracter)) {
+      } else {
+        evento.consume();
+      }
+    } else {
+      evento.consume();
+    }
+  }
 }
